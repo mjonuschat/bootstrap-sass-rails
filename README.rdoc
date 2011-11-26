@@ -1,0 +1,31 @@
+# Bootstrap::Sass::Rails
+
+Bootstrap is Twitter's toolkit for kickstarting CSS for websites, apps, and more. It includes base CSS styles for typography, forms, buttons, tables, grids, navigation, alerts, and more.
+
+This version uses Sass instead of LESS and the file layout has been adjusted to be compatible with the Rails 3.1 asset pipeline.
+
+## Note on Patches / Pull Requests
+
+* Fork the project.
+* Make your feature addition or bug fix.
+* Add tests for it. This is important so I don't break it in a future version unintentionally.
+* Commit, do not mess with rakefile, version, or history.
+  (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
+* Send me a pull request. Bonus points for topic branches.
+
+## Credits
+
+This work incorporates [Twitter Bootstrap](https://github.com/twiiter/bootstrap) by Twitter, Inc.  
+
+## Maintainers
+
+* [Morton Jonuschat](https://github.com/yabawock)
+
+## License
+
+Apache License, Version 2.0
+
+## Copyright
+
+Copyright 2011 Morton Jonuschat  
+Twitter Bootstrap copyright 2011 Twitter, Inc  
