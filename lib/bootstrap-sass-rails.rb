@@ -4,3 +4,5 @@ module Bootstrap
     end
   end
 end
+
+require 'bootstrap/sass/rails'
