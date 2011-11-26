@@ -9,14 +9,14 @@
 
 table {
   width: 100%;
-  margin-bottom: @baseline;
+  margin-bottom: $baseline;
   padding: 0;
-  font-size: @basefont;
+  font-size: $basefont;
   border-collapse: collapse;
   th,
   td {
     padding: 10px 10px 9px;
-    line-height: @baseline;
+    line-height: $baseline;
     text-align: left;
   }
   th {
@@ -53,7 +53,7 @@ table {
   border: 1px solid #ddd;
   border-collapse: separate; // Done so we can round those corners!
   *border-collapse: collapse; /* IE7, collapse table to remove spacing */
-  .border-radius(4px);
+  @include border-radius(4px);
   th + th,
   td + td,
   th + td {
@@ -61,17 +61,17 @@ table {
   }
   thead tr:first-child th:first-child,
   tbody tr:first-child td:first-child {
-    .border-radius(4px 0 0 0);
+    @include border-radius(4px 0 0 0);
   }
   thead tr:first-child th:last-child,
   tbody tr:first-child td:last-child {
-    .border-radius(0 4px 0 0);
+    @include border-radius(0 4px 0 0);
   }
   tbody tr:last-child td:first-child {
-    .border-radius(0 0 0 4px);
+    @include border-radius(0 0 0 4px);
   }
   tbody tr:last-child td:last-child {
-    .border-radius(0 0 4px 0);
+    @include border-radius(0 0 4px 0);
   }
 }
 
@@ -80,27 +80,27 @@ table {
 // ----------------
 
 // This is a duplication of the main grid .columns() mixin, but subtracts 20px to account for input padding and border
-.tableColumns(@columnSpan: 1) {
-  width: ((@gridColumnWidth - 20) * @columnSpan) + ((@gridColumnWidth - 20) * (@columnSpan - 1));
+@mixin tableColumns($columnSpan: 1) {
+  width: (($gridColumnWidth - 20) * $columnSpan) + (($gridColumnWidth - 20) * ($columnSpan - 1));
 }
 table {
   // Default columns
-  .span1     { .tableColumns(1); }
-  .span2     { .tableColumns(2); }
-  .span3     { .tableColumns(3); }
-  .span4     { .tableColumns(4); }
-  .span5     { .tableColumns(5); }
-  .span6     { .tableColumns(6); }
-  .span7     { .tableColumns(7); }
-  .span8     { .tableColumns(8); }
-  .span9     { .tableColumns(9); }
-  .span10    { .tableColumns(10); }
-  .span11    { .tableColumns(11); }
-  .span12    { .tableColumns(12); }
-  .span13    { .tableColumns(13); }
-  .span14    { .tableColumns(14); }
-  .span15    { .tableColumns(15); }
-  .span16    { .tableColumns(16); }
+  .span1     { @include tableColumns(1); }
+  .span2     { @include tableColumns(2); }
+  .span3     { @include tableColumns(3); }
+  .span4     { @include tableColumns(4); }
+  .span5     { @include tableColumns(5); }
+  .span6     { @include tableColumns(6); }
+  .span7     { @include tableColumns(7); }
+  .span8     { @include tableColumns(8); }
+  .span9     { @include tableColumns(9); }
+  .span10    { @include tableColumns(10); }
+  .span11    { @include tableColumns(11); }
+  .span12    { @include tableColumns(12); }
+  .span13    { @include tableColumns(13); }
+  .span14    { @include tableColumns(14); }
+  .span15    { @include tableColumns(15); }
+  .span16    { @include tableColumns(16); }
 }
 
 
@@ -152,7 +152,7 @@ table {
   .headerSortDown:hover {
     &:after {
       visibility:visible;
-      .opacity(60);
+      @include opacity(60);
     }
   }
   // Style the ascending (reverse alphabetical) column header
@@ -163,62 +163,62 @@ table {
       border-right: 4px solid transparent;
       border-top: 4px solid #000;
       visibility:visible;
-      .box-shadow(none); //can't add boxshadow to downward facing arrow :(
-      .opacity(60);
+      @include box-shadow(none); //can't add boxshadow to downward facing arrow :(
+      @include opacity(60);
     }
   }
   // Blue Table Headings
   .blue {
-    color: @blue;
-    border-bottom-color: @blue;
+    color: $blue;
+    border-bottom-color: $blue;
   }
   .headerSortUp.blue,
   .headerSortDown.blue {
-    background-color: lighten(@blue, 40%);
+    background-color: lighten($blue, 40%);
   }
   // Green Table Headings
   .green {
-    color: @green;
-    border-bottom-color: @green;
+    color: $green;
+    border-bottom-color: $green;
   }
   .headerSortUp.green,
   .headerSortDown.green {
-    background-color: lighten(@green, 40%);
+    background-color: lighten($green, 40%);
   }
   // Red Table Headings
   .red {
-    color: @red;
-    border-bottom-color: @red;
+    color: $red;
+    border-bottom-color: $red;
   }
   .headerSortUp.red,
   .headerSortDown.red {
-    background-color: lighten(@red, 50%);
+    background-color: lighten($red, 50%);
   }
   // Yellow Table Headings
   .yellow {
-    color: @yellow;
-    border-bottom-color: @yellow;
+    color: $yellow;
+    border-bottom-color: $yellow;
   }
   .headerSortUp.yellow,
   .headerSortDown.yellow {
-    background-color: lighten(@yellow, 40%);
+    background-color: lighten($yellow, 40%);
   }
   // Orange Table Headings
   .orange {
-    color: @orange;
-    border-bottom-color: @orange;
+    color: $orange;
+    border-bottom-color: $orange;
   }
   .headerSortUp.orange,
   .headerSortDown.orange {
-    background-color: lighten(@orange, 40%);
+    background-color: lighten($orange, 40%);
   }
   // Purple Table Headings
   .purple {
-    color: @purple;
-    border-bottom-color: @purple;
+    color: $purple;
+    border-bottom-color: $purple;
   }
   .headerSortUp.purple,
   .headerSortDown.purple {
-    background-color: lighten(@purple, 40%);
+    background-color: lighten($purple, 40%);
   }
 }

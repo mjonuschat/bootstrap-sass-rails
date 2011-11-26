@@ -1,4 +1,4 @@
-/* Forms.less
+/* Forms.css.scss
  * Base styles for various input types, form layouts, and states
  * ------------------------------------------------------------- */
 
@@ -7,19 +7,19 @@
 // -----------
 
 form {
-  margin-bottom: @baseline;
+  margin-bottom: $baseline;
 }
 
 // Groups of fields with labels on top (legends)
 fieldset {
-  margin-bottom: @baseline;
-  padding-top: @baseline;
+  margin-bottom: $baseline;
+  padding-top: $baseline;
   legend {
     display: block;
     padding-left: 150px;
-    font-size: @basefont * 1.5;
+    font-size: $basefont * 1.5;
     line-height: 1;
-    color: @grayDark;
+    color: $grayDark;
     *padding: 0 0 5px 145px; /* IE6-7 */
     *line-height: 1.5; /* IE6-7 */
   }
@@ -27,8 +27,8 @@ fieldset {
 
 // Parent element that clears floats and wraps labels and fields together
 form .clearfix {
-  margin-bottom: @baseline;
-  .clearfix()
+  margin-bottom: $baseline;
+  @include clearfix();
 }
 
 // Set font for forms
@@ -36,18 +36,18 @@ label,
 input,
 select,
 textarea {
-  #font > .sans-serif(normal,13px,normal);
+  @include sans-serif-font(normal,13px,normal);
 }
 
 // Float labels left
 label {
   padding-top: 6px;
-  font-size: @basefont;
-  line-height: @baseline;
+  font-size: $basefont;
+  line-height: $baseline;
   float: left;
   width: 130px;
   text-align: right;
-  color: @grayDark;
+  color: $grayDark;
 }
 
 // Shift over the inside div to align all label's relevant content
@@ -68,13 +68,13 @@ select,
 .uneditable-input {
   display: inline-block;
   width: 210px;
-  height: @baseline;
+  height: $baseline;
   padding: 4px;
-  font-size: @basefont;
-  line-height: @baseline;
-  color: @gray;
+  font-size: $basefont;
+  line-height: $baseline;
+  color: $gray;
   border: 1px solid #ccc;
-  .border-radius(3px);
+  @include border-radius(3px);
 }
 
 // remove padding from select
@@ -95,11 +95,11 @@ input[type=radio] {
 }
 
 input[type=file] {
-  background-color: @white;
+  background-color: $white;
   padding: initial;
   border: initial;
   line-height: initial;
-  .box-shadow(none);
+  @include box-shadow(none);
 }
 
 input[type=button],
@@ -111,16 +111,16 @@ input[type=submit] {
 
 select,
 input[type=file] {
-  height: @baseline * 1.5; // In IE7, the height of the select element cannot be changed by height, only font-size
+  height: $baseline * 1.5; // In IE7, the height of the select element cannot be changed by height, only font-size
   *height: auto; // Reset for IE7
-  line-height: @baseline * 1.5;
+  line-height: $baseline * 1.5;
   *margin-top: 4px; /* For IE7, add top margin to align select with labels */
 }
 
 // Make multiple select elements height not fixed
 select[multiple] {
   height: inherit;
-  background-color: @white; // Fixes Chromium bug of unreadable items
+  background-color: $white; // Fixes Chromium bug of unreadable items
 }
 
 textarea {
@@ -129,39 +129,39 @@ textarea {
 
 // For text that needs to appear as an input but should not be an input
 .uneditable-input {
-  background-color: @white;
+  background-color: $white;
   display: block;
   border-color: #eee;
-  .box-shadow(inset 0 1px 2px rgba(0,0,0,.025));
+  @include box-shadow(inset 0 1px 2px rgba(0,0,0,.025));
   cursor: not-allowed;
 }
 
 // Placeholder text gets special styles; can't be bundled together though for some reason
 :-moz-placeholder {
-  color: @grayLight;
+  color: $grayLight;
 }
 ::-webkit-input-placeholder {
-  color: @grayLight;
+  color: $grayLight;
 }
 
 // Focus states
 input,
 textarea {
-  @transition: border linear .2s, box-shadow linear .2s;
-  .transition(@transition);
-  .box-shadow(inset 0 1px 3px rgba(0,0,0,.1));
+  $transition: border linear .2s, box-shadow linear .2s;
+  @include transition($transition);
+  @include box-shadow(inset 0 1px 3px rgba(0,0,0,.1));
 }
 input:focus,
 textarea:focus {
   outline: 0;
   border-color: rgba(82,168,236,.8);
-  @shadow: inset 0 1px 3px rgba(0,0,0,.1), 0 0 8px rgba(82,168,236,.6);
-  .box-shadow(@shadow);
+  $shadow: inset 0 1px 3px rgba(0,0,0,.1), 0 0 8px rgba(82,168,236,.6);
+  @include box-shadow($shadow);
 }
 input[type=file]:focus,
 input[type=checkbox]:focus,
 select:focus {
-  .box-shadow(none); // override for file inputs
+  @include box-shadow(none); // override for file inputs
   outline: 1px dotted #666; // Selet elements don't get box-shadow styles, so instead we do outline
 }
 
@@ -170,42 +170,42 @@ select:focus {
 // --------------------------
 
 // Mixin for form field states
-.formFieldState(@textColor: #555, @borderColor: #ccc, @backgroundColor: #f5f5f5) {
+@mixin formFieldState($textColor: #555, $borderColor: #ccc, $backgroundColor: #f5f5f5) {
   // Set the text color
   > label,
   .help-block,
   .help-inline {
-    color: @textColor;
+    color: $textColor;
   }
   // Style inputs accordingly
   input,
   textarea {
-    color: @textColor;
-    border-color: @borderColor;
+    color: $textColor;
+    border-color: $borderColor;
     &:focus {
-      border-color: darken(@borderColor, 10%);
-      .box-shadow(0 0 6px lighten(@borderColor, 20%);
+      border-color: darken($borderColor, 10%);
+      @include box-shadow(0 0 6px lighten($borderColor, 20%));
     }
   }
   // Give a small background color for input-prepend/-append
   .input-prepend .add-on,
   .input-append .add-on {
-    color: @textColor;
-    background-color: @backgroundColor;
-    border-color: @textColor;
+    color: $textColor;
+    background-color: $backgroundColor;
+    border-color: $textColor;
   }
 }
 // Error
 form .clearfix.error {
-  .formFieldState(#b94a48, #ee5f5b, lighten(#ee5f5b, 30%));
+  @include formFieldState(#b94a48, #ee5f5b, lighten(#ee5f5b, 30%));
 }
 // Warning
 form .clearfix.warning {
-  .formFieldState(#c09853, #ccae64, lighten(#CCAE64, 5%));
+  @include formFieldState(#c09853, #ccae64, lighten(#CCAE64, 5%));
 }
 // Success
 form .clearfix.success {
-  .formFieldState(#468847, #57a957, lighten(#57a957, 30%));
+  @include formFieldState(#468847, #57a957, lighten(#57a957, 30%));
 }
 
 
@@ -253,31 +253,31 @@ textarea.xxlarge {
 
 // Grid style input sizes
 // This is a duplication of the main grid .columns() mixin, but subtracts 10px to account for input padding and border
-.formColumns(@columnSpan: 1) {
+@mixin formColumns($columnSpan: 1) {
   display: inline-block;
   float: none;
-  width: ((@gridColumnWidth) * @columnSpan) + (@gridGutterWidth * (@columnSpan - 1)) - 10;
+  width: (($gridColumnWidth) * $columnSpan) + ($gridGutterWidth * ($columnSpan - 1)) - 10;
   margin-left: 0;
 }
 input,
 textarea {
   // Default columns
-  &.span1     { .formColumns(1); }
-  &.span2     { .formColumns(2); }
-  &.span3     { .formColumns(3); }
-  &.span4     { .formColumns(4); }
-  &.span5     { .formColumns(5); }
-  &.span6     { .formColumns(6); }
-  &.span7     { .formColumns(7); }
-  &.span8     { .formColumns(8); }
-  &.span9     { .formColumns(9); }
-  &.span10    { .formColumns(10); }
-  &.span11    { .formColumns(11); }
-  &.span12    { .formColumns(12); }
-  &.span13    { .formColumns(13); }
-  &.span14    { .formColumns(14); }
-  &.span15    { .formColumns(15); }
-  &.span16    { .formColumns(16); }
+  &.span1     { @include formColumns(1); }
+  &.span2     { @include formColumns(2); }
+  &.span3     { @include formColumns(3); }
+  &.span4     { @include formColumns(4); }
+  &.span5     { @include formColumns(5); }
+  &.span6     { @include formColumns(6); }
+  &.span7     { @include formColumns(7); }
+  &.span8     { @include formColumns(8); }
+  &.span9     { @include formColumns(9); }
+  &.span10    { @include formColumns(10); }
+  &.span11    { @include formColumns(11); }
+  &.span12    { @include formColumns(12); }
+  &.span13    { @include formColumns(13); }
+  &.span14    { @include formColumns(14); }
+  &.span15    { @include formColumns(15); }
+  &.span16    { @include formColumns(16); }
 }
 
 // Disabled and read-only inputs
@@ -295,11 +295,11 @@ textarea[readonly] {
 // Actions (the buttons)
 .actions {
   background: #f5f5f5;
-  margin-top: @baseline;
-  margin-bottom: @baseline;
-  padding: (@baseline - 1) 20px @baseline 150px;
+  margin-top: $baseline;
+  margin-bottom: $baseline;
+  padding: ($baseline - 1) 20px $baseline 150px;
   border-top: 1px solid #ddd;
-  .border-radius(0 0 3px 3px);
+  @include border-radius(0 0 3px 3px);
   .secondary-action {
     float: right;
     a {
@@ -315,9 +315,9 @@ textarea[readonly] {
 // TODO: Do we need to set basefont and baseline here?
 .help-inline,
 .help-block {
-  font-size: @basefont;
-  line-height: @baseline;
-  color: @grayLight;
+  font-size: $basefont;
+  line-height: $baseline;
+  color: $grayLight;
 }
 .help-inline {
   padding-left: 5px;
@@ -333,7 +333,7 @@ textarea[readonly] {
 
 // Inline Fields (input fields that appear as inline objects
 .inline-inputs {
-  color: @gray;
+  color: $gray;
   span {
     padding: 0 2px 0 1px;
   }
@@ -343,7 +343,7 @@ textarea[readonly] {
 .input-prepend,
 .input-append {
   input {
-    .border-radius(0 3px 3px 0);
+    @include border-radius(0 3px 3px 0);
   }
   .add-on {
     position: relative;
@@ -359,14 +359,14 @@ textarea[readonly] {
     margin-right: -1px;
     font-weight: normal;
     line-height: 18px;
-    color: @grayLight;
+    color: $grayLight;
     text-align: center;
-    text-shadow: 0 1px 0 @white;
-    .border-radius(3px 0 0 3px);
+    text-shadow: 0 1px 0 $white;
+    @include border-radius(3px 0 0 3px);
   }
   .active {
-    background: lighten(@green, 30);
-    border-color: @green;
+    background: lighten($green, 30);
+    border-color: $green;
   }
 }
 .input-prepend {
@@ -377,10 +377,10 @@ textarea[readonly] {
 .input-append {
   input {
     float: left;
-    .border-radius(3px 0 0 3px);
+    @include border-radius(3px 0 0 3px);
   }
   .add-on {
-    .border-radius(0 3px 3px 0);
+    @include border-radius(0 3px 3px 0);
     margin-right: 0;
     margin-left: -1px;
   }
@@ -401,14 +401,14 @@ textarea[readonly] {
     width: auto;
     padding: 0;
     margin-left: 20px;
-    line-height: @baseline;
+    line-height: $baseline;
     text-align: left;
     white-space: normal;
     strong {
-      color: @gray;
+      color: $gray;
     }
     small {
-      font-size: @basefont - 2;
+      font-size: $basefont - 2;
       font-weight: normal;
     }
   }
@@ -435,7 +435,7 @@ textarea[readonly] {
 .form-stacked {
   padding-left: 20px;
   fieldset {
-    padding-top: @baseline / 2;
+    padding-top: $baseline / 2;
   }
   legend {
     padding-left: 0;
@@ -450,7 +450,7 @@ textarea[readonly] {
     padding-top: 0;
   }
   .clearfix {
-    margin-bottom: @baseline / 2;
+    margin-bottom: $baseline / 2;
     div.input {
       margin-left: 0;
     }
