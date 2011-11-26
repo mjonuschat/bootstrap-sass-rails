@@ -1,0 +1,26 @@
+/*!
+ * Bootstrap @VERSION
+ *
+ * Copyright 2011 Twitter, Inc
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Designed and built with all the love in the world @twitter by @mdo and @fat.
+ * Date: @DATE
+ */
+
+// CSS Reset
+@import "bootstrap/reset";
+
+// Core variables and mixins
+@import "bootstrap/variables"; // Modify this for custom colors, font-sizes, etc
+@import "bootstrap/mixins";
+
+// Grid system and page structure
+@import "bootstrap/scaffolding";
+
+// Styled patterns and elements
+@import "bootstrap/type";
+@import "bootstrap/forms";
+@import "bootstrap/tables";
+@import "bootstrap/patterns";

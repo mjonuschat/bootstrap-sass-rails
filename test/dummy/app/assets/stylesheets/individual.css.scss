@@ -1,0 +1,10 @@
+@import "twitter/bootstrap/variables";
+@import "twitter/bootstrap/mixins";
+
+@mixin myButton($radius: 5px) {
+  @include border-radius($radius);
+}
+
+#individual-my-button {
+  @include myButton(10px);
+}
