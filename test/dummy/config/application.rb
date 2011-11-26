@@ -4,6 +4,7 @@ require 'rails/all'
 
 Bundler.require
 require "bootstrap-sass-rails"
+require "sass-rails"
 
 module Dummy
   class Application < Rails::Application
@@ -40,6 +41,9 @@ module Dummy
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    # Set an easier to test css style
+    config.sass.style = :compact
   end
 end
 

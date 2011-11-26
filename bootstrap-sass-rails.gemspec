@@ -14,13 +14,10 @@ Gem::Specification.new do |s|
   s.description = "Bootstrap is Twitter's toolkit for kickstarting CSS for websites, apps, and more. It includes base CSS styles for typography, forms, buttons, tables, grids, navigation, alerts, and more."
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
-  s.test_files = Dir["spec/**/*", "test/**/*"]
+  s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails",                     "~> 3.1.3"
 
   s.add_development_dependency "rake",          "~> 0.9.2"
-  s.add_development_dependency "jquery-rails",  "~> 1.0.18"
-  s.add_development_dependency "sqlite3",       "~> 1.3.3"
-  s.add_development_dependency "rspec-rails",   "~> 2.7.0"
-  s.add_development_dependency "sass",          "~> 3.1.0"
+  s.add_development_dependency "sass-rails",    "~> 3.1.0"
 end
