@@ -109,7 +109,6 @@
 
 // Transitions
 @mixin transition($transition) {
--webkit-transform-style: "preserve-3d";
      -webkit-transition: $transition;
         -moz-transition: $transition;
          -ms-transition: $transition;
