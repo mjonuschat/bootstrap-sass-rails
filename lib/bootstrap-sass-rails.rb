@@ -6,3 +6,4 @@ module Bootstrap
 end
 
 require 'bootstrap/sass/rails'
+require 'bootstrap/sass/extensions'
