@@ -9,54 +9,54 @@
  */
 
 // Core variables and mixins
-@import "bootstrap/variables.scss"; // Modify this for custom colors, font-sizes, etc
-@import "bootstrap/mixins.scss";
+@import "bootstrap/variables"; // Modify this for custom colors, font-sizes, etc
+@import "bootstrap/mixins";
 
 // CSS Reset
-@import "bootstrap/reset.scss";
+@import "bootstrap/reset";
 
 // Grid system and page structure
-@import "bootstrap/scaffolding.scss";
-@import "bootstrap/grid.scss";
-@import "bootstrap/layouts.scss";
+@import "bootstrap/scaffolding";
+@import "bootstrap/grid";
+@import "bootstrap/layouts";
 
 // Base CSS
-@import "bootstrap/type.scss";
-@import "bootstrap/code.scss";
-@import "bootstrap/forms.scss";
-@import "bootstrap/tables.scss";
+@import "bootstrap/type";
+@import "bootstrap/code";
+@import "bootstrap/forms";
+@import "bootstrap/tables";
 
 // Components: common
-@import "bootstrap/sprites.scss";
-@import "bootstrap/dropdowns.scss";
-@import "bootstrap/wells.scss";
-@import "bootstrap/component-animations.scss";
-@import "bootstrap/close.scss";
+@import "bootstrap/sprites";
+@import "bootstrap/dropdowns";
+@import "bootstrap/wells";
+@import "bootstrap/component-animations";
+@import "bootstrap/close";
 
 // Components: Buttons & Alerts
-@import "bootstrap/buttons.scss";
-@import "bootstrap/button-groups.scss";
-@import "bootstrap/alerts.scss"; // Note: alerts share common CSS with buttons and thus have styles in buttons.less
+@import "bootstrap/buttons";
+@import "bootstrap/button-groups";
+@import "bootstrap/alerts"; // Note: alerts share common CSS with buttons and thus have styles in buttons.less
 
 // Components: Nav
-@import "bootstrap/navs.scss";
-@import "bootstrap/navbar.scss";
-@import "bootstrap/breadcrumbs.scss";
-@import "bootstrap/pagination.scss";
-@import "bootstrap/pager.scss";
+@import "bootstrap/navs";
+@import "bootstrap/navbar";
+@import "bootstrap/breadcrumbs";
+@import "bootstrap/pagination";
+@import "bootstrap/pager";
 
 // Components: Popovers
-@import "bootstrap/modals.scss";
-@import "bootstrap/tooltip.scss";
-@import "bootstrap/popovers.scss";
+@import "bootstrap/modals";
+@import "bootstrap/tooltip";
+@import "bootstrap/popovers";
 
 // Components: Misc
-@import "bootstrap/thumbnails.scss";
-@import "bootstrap/labels.scss";
-@import "bootstrap/progress-bars.scss";
-@import "bootstrap/accordion.scss";
-@import "bootstrap/carousel.scss";
-@import "bootstrap/hero-unit.scss";
+@import "bootstrap/thumbnails";
+@import "bootstrap/labels";
+@import "bootstrap/progress-bars";
+@import "bootstrap/accordion";
+@import "bootstrap/carousel";
+@import "bootstrap/hero-unit";
 
 // Utility classes
-@import "bootstrap/utilities.scss"; // Has to be last to override when necessary
+@import "bootstrap/utilities"; // Has to be last to override when necessary

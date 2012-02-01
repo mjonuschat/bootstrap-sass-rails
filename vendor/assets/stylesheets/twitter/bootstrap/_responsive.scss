@@ -17,8 +17,8 @@
 // -------------------------
 // Required since we compile the responsive stuff separately
 
-@import "variables.less"; // Modify this for custom colors, font-sizes, etc
-@import "mixins.less";
+@import "variables"; // Modify this for custom colors, font-sizes, etc
+@import "mixins";
 
 
 // RESPONSIVE CLASSES
