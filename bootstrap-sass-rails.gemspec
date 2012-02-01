@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.authors     = ["Morton Jonuschat"]
   s.email       = ["yabawock@gmail.com"]
   s.homepage    = "https://github.com/yabawock/bootstrap-sass-rails"
-  s.summary     = "HTML, CSS, and JS toolkit from Twitter converted to Sasss and the Rails 3.1 asset pipeline"
+  s.summary     = "HTML, CSS, and JS toolkit from Twitter converted to Sasss and the Rails asset pipeline"
   s.description = "Bootstrap is Twitter's toolkit for kickstarting CSS for websites, apps, and more. It includes base CSS styles for typography, forms, buttons, tables, grids, navigation, alerts, and more."
 
   s.files = Dir["{app,config,db,lib,vendor}/**/*"] + ["LICENSE", "Rakefile", "README.md"]
