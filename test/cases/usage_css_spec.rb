@@ -43,6 +43,11 @@ class UsageCssSpec < Bootstrap::Sass::Rails::Spec
       app_css.must_include '#other-css { color: red; }',  'From our code afterward.'
     end
 
+    it 'must render the correct path for the icon sprites' do
+      app_css.must_include 'background-image: url(/assets/twitter/bootstrap/glyphicons-halflings.png)'
+      app_css.must_include 'background-image: url(/assets/twitter/bootstrap/glyphicons-halflings-white.png)'
+    end
+
   end
 
   describe 'individual.scss' do
