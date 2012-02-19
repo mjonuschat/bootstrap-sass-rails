@@ -6,8 +6,8 @@
 // ICONS
 // -----
 
-// All icons receive the styles of the <i> tag with a base class 
-// of .i and are then given a unique class to add width, height, 
+// All icons receive the styles of the <i> tag with a base class
+// of .i and are then given a unique class to add width, height,
 // and background-position. Your resulting HTML will look like
 // <i class="icon-inbox"></i>.
 
@@ -21,14 +21,14 @@
   height: 14px;
   line-height: 14px;
   vertical-align: text-top;
-  background-image: url($iconSpritePath);
+  background-image: image-url($iconSpritePath);
   background-position: 14px 14px;
   background-repeat: no-repeat;
 
   @include ie7-restore-right-whitespace();
 }
 .icon-white {
-  background-image: url($iconWhiteSpritePath);
+  background-image: image-url($iconWhiteSpritePath);
 }
 
 .icon-glass              { background-position: 0      0; }
