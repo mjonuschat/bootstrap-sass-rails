@@ -2,7 +2,7 @@
 // -----------
 
 // Fixed (940px)
-@include gridSystem-generate($gridColumns, $gridColumnWidth, $gridGutterWidth);
+@include grid-core($gridColumnWidth, $gridGutterWidth);
 
 // Fluid (940px)
-@include fluidGridSystem-generate($gridColumns, $fluidGridColumnWidth, $fluidGridGutterWidth);
+@include grid-fluid($fluidGridColumnWidth, $fluidGridGutterWidth);
