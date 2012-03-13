@@ -37,6 +37,7 @@ class UsageCssSpec < Bootstrap::Sass::Rails::Spec
       app_css.must_include '_accordion.scss'
       app_css.must_include '_carousel.scss'
       app_css.must_include '_hero-unit.scss'
+      app_css.must_include '_badges.scss'
     end
 
     it 'must include basic css afterward' do
