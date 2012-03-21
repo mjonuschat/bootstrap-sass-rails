@@ -505,11 +505,11 @@
 }
 
 // The Grid
-@mixin grid-core-offset($columns) {
+@mixin grid-core-offset($gridColumnWidth, $gridGutterWidth, $columns) {
   margin-left: ($gridColumnWidth * $columns) + ($gridGutterWidth * ($columns - 1)) + ($gridGutterWidth * 2);
 }
 
-@mixin grid-core-span($columns) {
+@mixin grid-core-span($gridColumnWidth, $gridGutterWidth, $columns) {
   width: ($gridColumnWidth * $columns) + ($gridGutterWidth * ($columns - 1));
 }
 
@@ -527,16 +527,16 @@
   // Set the container width, and override it for fixed navbars in media queries
   .container,
   .navbar-fixed-top .container,
-  .navbar-fixed-bottom .container { @include grid-core-span($gridColumns); }
+  .navbar-fixed-bottom .container { @include grid-core-span($gridColumnWidth, $gridGutterWidth, $gridColumns); }
 
   // generate .spanX and .offsetX
   @for $index from 1 through $gridColumns {
-    .span#{$index}  { @include grid-core-span($index) }
-    .offset#{$index} { @include grid-core-offset($index) }
+    .span#{$index}  { @include grid-core-span($gridColumnWidth, $gridGutterWidth, $index) }
+    .offset#{$index} { @include grid-core-offset($gridColumnWidth, $gridGutterWidth, $index) }
   }
 }
 
-@mixin grid-fluid-span($columns) {
+@mixin grid-fluid-span($gridColumnWidth, $gridGutterWidth, $columns) {
   width: ($fluidGridColumnWidth * $columns) + ($fluidGridGutterWidth * ($columns - 1));
 }
 
@@ -554,12 +554,12 @@
 
     // generate .spanX
     @for $index from 1 through $gridColumns {
-      > .span#{$index} { @include grid-fluid-span($index); }
+      > .span#{$index} { @include grid-fluid-span($gridColumnWidth, $gridGutterWidth, $index); }
     }
   }
 }
 
-@mixin grid-input-span($columns) {
+@mixin grid-input-span($gridColumnWidth, $gridGutterWidth, $columns) {
   width: (($gridColumnWidth) * $columns) + ($gridGutterWidth * ($columns - 1)) - 10;
 }
 @mixin grid-input($gridColumnWidth, $gridGutterWidth) {
@@ -574,7 +574,7 @@
     input.span#{$index},
     textarea.span#{$index},
     .uneditable-input.span#{$index} {
-      @include grid-input-span($index);
+      @include grid-input-span($gridColumnWidth, $gridGutterWidth, $index);
     }
   }
 }
