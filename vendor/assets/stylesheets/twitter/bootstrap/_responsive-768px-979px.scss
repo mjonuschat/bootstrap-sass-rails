@@ -13,5 +13,7 @@
   @include grid-input(42px, 20px);
 
   // No need to reset .thumbnails here since it's the same @gridGutterWidth
-
+  .thumbnails {
+    margin-left: -$gridGutterWidth;
+  }
 }
