@@ -32,12 +32,11 @@ class UsageCssSpec < Bootstrap::Sass::Rails::Spec
       app_css.must_include '_tooltip.scss'
       app_css.must_include '_popovers.scss'
       app_css.must_include '_thumbnails.scss'
-      app_css.must_include '_labels.scss'
+      app_css.must_include '_labels-badges.scss'
       app_css.must_include '_progress-bars.scss'
       app_css.must_include '_accordion.scss'
       app_css.must_include '_carousel.scss'
       app_css.must_include '_hero-unit.scss'
-      app_css.must_include '_badges.scss'
     end
 
     it 'must include basic css afterward' do
@@ -60,7 +59,11 @@ class UsageCssSpec < Bootstrap::Sass::Rails::Spec
       my_button_line.must_include '-webkit-border-radius: 10px'
       my_button_line.must_include '-moz-border-radius: 10px'
       my_button_line.must_include 'border-radius: 10px'
-      individual_css.must_include '_responsive.scss'
+      individual_css.must_include '_responsive-1200px-min.scss'
+      individual_css.must_include '_responsive-767px-max.scss'
+      individual_css.must_include '_responsive-768px-979px.scss'
+      individual_css.must_include '_responsive-navbar.scss'
+      individual_css.must_include '_responsive-utilities.scss'
     end
 
   end
@@ -95,7 +98,7 @@ class UsageCssSpec < Bootstrap::Sass::Rails::Spec
       sprockets_css.must_include '_tooltip.scss'
       sprockets_css.must_include '_popovers.scss'
       sprockets_css.must_include '_thumbnails.scss'
-      sprockets_css.must_include '_labels.scss'
+      sprockets_css.must_include '_labels-badges.scss'
       sprockets_css.must_include '_progress-bars.scss'
       sprockets_css.must_include '_accordion.scss'
       sprockets_css.must_include '_carousel.scss'
