@@ -59,7 +59,11 @@ class UsageCssSpec < Bootstrap::Sass::Rails::Spec
       my_button_line.must_include '-webkit-border-radius: 10px'
       my_button_line.must_include '-moz-border-radius: 10px'
       my_button_line.must_include 'border-radius: 10px'
-      individual_css.must_include '_responsive.scss'
+      individual_css.must_include '_responsive-1200px-min.scss'
+      individual_css.must_include '_responsive-767px-max.scss'
+      individual_css.must_include '_responsive-768px-979px.scss'
+      individual_css.must_include '_responsive-navbar.scss'
+      individual_css.must_include '_responsive-utilities.scss'
     end
 
   end
