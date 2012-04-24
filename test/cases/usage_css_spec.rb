@@ -32,12 +32,11 @@ class UsageCssSpec < Bootstrap::Sass::Rails::Spec
       app_css.must_include '_tooltip.scss'
       app_css.must_include '_popovers.scss'
       app_css.must_include '_thumbnails.scss'
-      app_css.must_include '_labels.scss'
+      app_css.must_include '_labels-badges.scss'
       app_css.must_include '_progress-bars.scss'
       app_css.must_include '_accordion.scss'
       app_css.must_include '_carousel.scss'
       app_css.must_include '_hero-unit.scss'
-      app_css.must_include '_badges.scss'
     end
 
     it 'must include basic css afterward' do
@@ -95,7 +94,7 @@ class UsageCssSpec < Bootstrap::Sass::Rails::Spec
       sprockets_css.must_include '_tooltip.scss'
       sprockets_css.must_include '_popovers.scss'
       sprockets_css.must_include '_thumbnails.scss'
-      sprockets_css.must_include '_labels.scss'
+      sprockets_css.must_include '_labels-badges.scss'
       sprockets_css.must_include '_progress-bars.scss'
       sprockets_css.must_include '_accordion.scss'
       sprockets_css.must_include '_carousel.scss'
