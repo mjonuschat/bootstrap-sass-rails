@@ -105,5 +105,5 @@ Apache License, Version 2.0
 
 ## Copyright
 
-Copyright 2011 Morton Jonuschat  
-Twitter Bootstrap copyright 2011 Twitter, Inc  
+Copyright 2011-2012 Morton Jonuschat  
+Twitter Bootstrap copyright 2011-2012 Twitter, Inc  
