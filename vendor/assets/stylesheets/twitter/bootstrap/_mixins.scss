@@ -93,20 +93,20 @@
 // -------------------------
 // Requires inline-block or block for proper styling
 @mixin text-overflow() {
-  font: 0/0 a;
-  color: transparent;
-  text-shadow: none;
-  background-color: transparent;
-  border: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 // CSS image replacement
 // -------------------------
 // Source: https://github.com/h5bp/html5-boilerplate/commit/aa0396eae757
 @mixin hide-text {
-  overflow: hidden;
-  text-indent: 100%;
-  white-space: nowrap;
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
 }
 
 
@@ -506,7 +506,7 @@
   width: (($gridColumnWidth) * $columnSpan) + ($gridGutterWidth * ($columnSpan - 1)) - 16; // 16 is total padding on left and right of table cells
   margin-left: 0; // undo default grid column styles
 }
-// TODO: MOJ - Port this
+
 // Make a Grid
 // Use .makeRow and .makeColumn to assign semantic layouts grid system behavior
 @mixin makeRow() {
