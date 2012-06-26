@@ -527,7 +527,7 @@
   margin-left: $gridGutterWidth * -1;
   @include clearfix();
 }
-@mixin makeColumn($columns: 1, $offSet: 0) {
+@mixin makeColumn($columns: 1, $offset: 0) {
   float: left;
   margin-left: ($gridColumnWidth * $offset) + ($gridGutterWidth * ($offset - 1)) + ($gridGutterWidth * 2);
   width: ($gridColumnWidth * $columns) + ($gridGutterWidth * ($columns - 1));
