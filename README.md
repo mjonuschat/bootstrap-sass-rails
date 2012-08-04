@@ -10,6 +10,20 @@ Twitter Bootstrap has been converted to Sass which makes it possible to use the 
   simple = require twitter/bootstrap
 * Ability to import individually namespaced stylesheets or javascripts.
 
+## Installation
+
+Add this line to your application's Gemfile:
+
+    gem 'bootstrap-sass-rails'
+
+And then execute:
+
+    $ bundle install
+
+Or install it yourself as:
+
+    $ gem install bootstrap-sass-rails
+
 ## Usage
 
 ### Stylesheets

@@ -202,18 +202,18 @@
 
 // Drop shadows
 @mixin box-shadow($shadow) {
-  -webkit-box-shadow: $shadow;
-     -moz-box-shadow: $shadow;
-          box-shadow: $shadow;
+  -webkit-box-shadow: unquote($shadow);
+     -moz-box-shadow: unquote($shadow);
+          box-shadow: unquote($shadow);
 }
 
 // Transitions
 @mixin transition($transition) {
-  -webkit-transition: $transition;
-     -moz-transition: $transition;
-      -ms-transition: $transition;
-       -o-transition: $transition;
-          transition: $transition;
+  -webkit-transition: unquote($transition);
+     -moz-transition: unquote($transition);
+      -ms-transition: unquote($transition);
+       -o-transition: unquote($transition);
+          transition: unquote($transition);
 }
 
 // Transformations
