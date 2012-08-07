@@ -69,6 +69,8 @@ within `.css.scss` files.
 }
 ```
 
+### Icon Fonts
+
 To ease the common use case of extending Twitter Bootstrap with a icon
 font like [Font Awesome](http://fortawesome.github.com/Font-Awesome/) a
 css file is included which leaves out the original sprites.
