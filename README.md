@@ -12,9 +12,11 @@ Twitter Bootstrap has been converted to Sass which makes it possible to use the 
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add these lines to your application's Gemfile:
 
-    gem 'bootstrap-sass-rails'
+    group :assets do
+      gem 'bootstrap-sass-rails'
+    end
 
 And then execute:
 
@@ -66,6 +68,29 @@ within `.css.scss` files.
   @include myButton(10px);
 }
 ```
+
+### Icon Fonts
+
+To ease the common use case of extending Twitter Bootstrap with a icon
+font like [Font Awesome](http://fortawesome.github.com/Font-Awesome/) a
+css file is included which leaves out the original sprites.
+
+You can use it like this
+
+```css
+/*
+ *= require twitter/bootstrap-no-sprites
+ */
+```
+
+or
+
+```css
+@import "twitter/bootstrap-no-sprites";
+```
+
+Please note that Font Awesome is not included in this gem - you will
+need to vendorize the font assets by yourself!
 
 ### Javascripts
 
