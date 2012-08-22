@@ -19,6 +19,7 @@ class UsageJsSpec < Bootstrap::Sass::Rails::Spec
       app_js.must_include 'bootstrap-tooltip.js'
       app_js.must_include 'bootstrap-transition.js'
       app_js.must_include 'bootstrap-typeahead.js'
+      app_js.must_include 'bootstrap-affix.js'
     end
 
     it 'must include basic js afterward' do
