@@ -151,9 +151,8 @@
 @mixin input-block-level {
   display: block;
   width: 100%;
-  min-height: 30px;                // Make inputs at least the height of their button counterpart
+  min-height: $inputHeight;        // Make inputs at least the height of their button counterpart
   @include box-sizing(border-box); // Makes inputs behave like true block-level elements
- 
 }
 
 
@@ -294,6 +293,7 @@
       -ms-transform: skewX($x), skewY($y); // See https://github.com/twitter/bootstrap/issues/4885
        -o-transform: skew($x, $y);
           transform: skew($x, $y);
+  -webkit-backface-visibility: hidden; // See https://github.com/twitter/bootstrap/issues/5319
 }
 @mixin translate3d($x, $y, $z) {
   -webkit-transform: translate3d($x, $y, $z);
@@ -321,7 +321,7 @@
 }
 
 // Background sizing
-@mixin background-size($size){
+@mixin background-size($size) {
   -webkit-background-size: $size;
      -moz-background-size: $size;
        -o-background-size: $size;
@@ -439,7 +439,7 @@
   background-repeat: no-repeat;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#{ie-hex-str($startColor)}, endColorstr=#{ie-hex-str($endColor)}, GradientType=0); // IE9 and down, gets no color-stop at all for proper fallback
 }
-@mixin gradient-radial($innerColor: #555, $outerColor: #333)  {
+@mixin gradient-radial($innerColor: #555, $outerColor: #333) {
   background-color: $outerColor;
   background-image: -webkit-gradient(radial, center center, 0, center center, 460, from($innerColor), to($outerColor));
   background-image: -webkit-radial-gradient(circle, $innerColor, $outerColor);
@@ -601,6 +601,11 @@
     }
     [class*="span"]:first-child {
       margin-left: 0;
+    }
+
+    // Space grid-sized controls properly if multiple per line
+    .controls-row [class*="span"] + [class*="span"] {
+      margin-left: $fluidGridGutterWidth;
     }
 
     // generate .spanX and offsetX

@@ -25,7 +25,7 @@
   padding-right: 20px;
   @include gradient-vertical($navbarBackgroundHighlight, $navbarBackground);
   border: 1px solid $navbarBorder;
-  @include border-radius(4px);
+  @include border-radius($baseBorderRadius);
   @include box-shadow(0 1px 4px rgba(0,0,0,.25));
 
   // Prevent floats from breaking the navbar
@@ -41,6 +41,7 @@
 // Override the default collapsed state
 .nav-collapse.collapse {
   height: auto;
+  overflow: visible;
 }
 
 // Brand: website or project name
@@ -149,7 +150,6 @@
 
 .navbar-static-top {
   position: static;
-  width: 100%;
   margin-bottom: 0; // remove 18px margin for default navbar
   .navbar-inner {
     @include border-radius(0);

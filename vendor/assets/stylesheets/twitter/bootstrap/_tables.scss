@@ -71,7 +71,7 @@ table {
   border-collapse: separate; // Done so we can round those corners!
   *border-collapse: collapse; // IE7 can't round corners anyway
   border-left: 0;
-  @include border-radius(4px);
+  @include border-radius($baseBorderRadius);
   th,
   td {
     border-left: 1px solid $tableBorder;
@@ -119,7 +119,7 @@ table {
   colgroup + tbody tr:first-child td:last-child {
     -webkit-border-top-right-radius: 4px;
             border-top-right-radius: 4px;
-         -moz-border-radius-topleft: 4px;
+        -moz-border-radius-topright: 4px;
   }
 
 }
@@ -158,39 +158,42 @@ table {
 // -----------------
 
 // Reset default grid behavior
-table [class*=span],
-.row-fluid table [class*=span] {
+table td[class*="span"],
+table th[class*="span"],
+.row-fluid table td[class*="span"],
+.row-fluid table th[class*="span"] {
   display: table-cell;
   float: none; // undo default grid column styles
   margin-left: 0; // undo default grid column styles
 }
 
 // Change the column widths to account for td/th padding
-.table {
-  .span1     { @include tableColumns(1); }
-  .span2     { @include tableColumns(2); }
-  .span3     { @include tableColumns(3); }
-  .span4     { @include tableColumns(4); }
-  .span5     { @include tableColumns(5); }
-  .span6     { @include tableColumns(6); }
-  .span7     { @include tableColumns(7); }
-  .span8     { @include tableColumns(8); }
-  .span9     { @include tableColumns(9); }
-  .span10    { @include tableColumns(10); }
-  .span11    { @include tableColumns(11); }
-  .span12    { @include tableColumns(12); }
-  .span13    { @include tableColumns(13); }
-  .span14    { @include tableColumns(14); }
-  .span15    { @include tableColumns(15); }
-  .span16    { @include tableColumns(16); }
-  .span17    { @include tableColumns(17); }
-  .span18    { @include tableColumns(18); }
-  .span19    { @include tableColumns(19); }
-  .span20    { @include tableColumns(20); }
-  .span21    { @include tableColumns(21); }
-  .span22    { @include tableColumns(22); }
-  .span23    { @include tableColumns(23); }
-  .span24    { @include tableColumns(24); }
+.table td,
+.table th {
+  &.span1     { @include tableColumns(1); }
+  &.span2     { @include tableColumns(2); }
+  &.span3     { @include tableColumns(3); }
+  &.span4     { @include tableColumns(4); }
+  &.span5     { @include tableColumns(5); }
+  &.span6     { @include tableColumns(6); }
+  &.span7     { @include tableColumns(7); }
+  &.span8     { @include tableColumns(8); }
+  &.span9     { @include tableColumns(9); }
+  &.span10    { @include tableColumns(10); }
+  &.span11    { @include tableColumns(11); }
+  &.span12    { @include tableColumns(12); }
+  &.span13    { @include tableColumns(13); }
+  &.span14    { @include tableColumns(14); }
+  &.span15    { @include tableColumns(15); }
+  &.span16    { @include tableColumns(16); }
+  &.span17    { @include tableColumns(17); }
+  &.span18    { @include tableColumns(18); }
+  &.span19    { @include tableColumns(19); }
+  &.span20    { @include tableColumns(20); }
+  &.span21    { @include tableColumns(21); }
+  &.span22    { @include tableColumns(22); }
+  &.span23    { @include tableColumns(23); }
+  &.span24    { @include tableColumns(24); }
 }
 
 
