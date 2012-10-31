@@ -7,7 +7,7 @@
   padding: 8px 15px;
   margin: 0 0 $baseLineHeight;
   list-style: none;
-  @include border-radius(4px);
+  @include border-radius($baseBorderRadius);
   li {
     display: inline-block;
     @include ie7-inline-block();
