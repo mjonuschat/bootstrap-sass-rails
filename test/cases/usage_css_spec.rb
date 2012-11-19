@@ -45,8 +45,9 @@ class UsageCssSpec < Bootstrap::Sass::Rails::Spec
     end
 
     it 'must render the correct path for the icon sprites' do
-      app_css.must_include 'background-image: url(/assets/twitter/bootstrap/glyphicons-halflings.png)'
-      app_css.must_include 'background-image: url(/assets/twitter/bootstrap/glyphicons-halflings-white.png)'
+      app_css.wont_include 'image-url'
+      app_css.must_include 'twitter/bootstrap/glyphicons-halflings.png'
+      app_css.must_include 'twitter/bootstrap/glyphicons-halflings-white.png'
     end
 
   end
