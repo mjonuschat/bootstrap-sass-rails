@@ -1,3 +1,4 @@
+language: ruby
 rvm:
   - 1.9.2
   - 1.9.3
@@ -12,3 +13,11 @@ branches:
   only:
     - master
     - develop
+
+before_install:
+  - gem install bundler
+
+matrix:
+  exclude:
+    - rvm: 1.9.3
+      gemfile: gemfiles/4.0.gemfile
