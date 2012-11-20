@@ -1,0 +1,16 @@
+language: ruby
+rvm:
+  - 1.9.3
+
+gemfile:
+  - gemfiles/3.1.gemfile
+  - gemfiles/3.2.gemfile
+  - gemfiles/4.0.gemfile
+
+branches:
+  only:
+    - master
+    - develop
+
+before_install:
+  - gem install bundler
