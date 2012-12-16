@@ -68,6 +68,31 @@ within `.css.scss` files.
   @include myButton(10px);
 }
 ```
+### Responsive styles
+
+Adding the responsive styles included with Twitter Bootstrap to your project is just as easy.
+Depending on the way you chose to include the base bootstrap styles you need to do one of the following:
+
+Importing the responsive partial using the Sass `@import` directive in a `.scss` file:
+
+```scss
+@import 'twitter/bootstrap';
+@import 'twitter/bootstrap/responsive';
+```
+
+Using `=require` to include the responsive partial in a `.css` file (watch the underscore in the partial name!):
+```css
+/*
+ *= require twitter/bootstrap
+ *= require twitter/bootstrap/_responsive
+ */
+```
+
+Using `=require` to include the responsive partial in a `.scss` file (watch the underscore in the partial name!):
+```scss
+#= require twitter/bootstrap
+#= require twitter/bootstrap/_responsive
+```
 
 ### Icon Fonts
 
