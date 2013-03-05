@@ -7,10 +7,6 @@ appraise "3.2" do
 end
 
 appraise "4.0" do
-  gem 'arel',                             github: 'rails/arel',                             branch: 'master'
-  gem 'journey',                          github: 'rails/journey',                          branch: 'master'
-  gem 'activerecord-deprecated_finders',  github: 'rails/activerecord-deprecated_finders',  branch: 'master'
-  gem 'sass-rails',                       github: 'rails/sass-rails',                       branch: 'master'
-  gem 'sprockets-rails',                  github: 'rails/sprockets-rails',                  branch: 'master'
-  gem "rails",                            github: "rails/rails"
+  gem "rails",      ">= 4.0.0.beta1"
+  gem "sass-rails", ">= 4.0.0.beta1"
 end
