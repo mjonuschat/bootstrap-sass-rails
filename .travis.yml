@@ -1,6 +1,8 @@
 language: ruby
 rvm:
   - 1.9.3
+  - 2.0.0
+  - jruby-19mode
 
 gemfile:
   - gemfiles/3.1.gemfile
@@ -14,3 +16,12 @@ branches:
 
 before_install:
   - gem install bundler
+
+matrix:
+  exclude:
+    - rvm: 2.0.0
+      gemfile: gemfiles/3.1.gemfile
+  allow_failures:
+    - rvm: 2.0.0
+    - rvm: jruby-19mode
+      gemfile: gemfiles/4.0.gemfile
