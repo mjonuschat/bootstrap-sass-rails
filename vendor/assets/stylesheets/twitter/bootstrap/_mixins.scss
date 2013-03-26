@@ -24,6 +24,9 @@
     clear: both;
   }
 }
+.clearfix {
+  @include clearfix();
+}
 
 // Webkit-style focus
 // ------------------
