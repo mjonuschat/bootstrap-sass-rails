@@ -10,6 +10,12 @@ class LessToSassSpec < Bootstrap::Sass::Rails::Spec
       app_css.must_include '.input-block-level {'
     end
 
+    it 'should include the clearfix helper classes' do
+      app_css.must_include '.clearfix { *zoom: 1; }'
+      app_css.must_include '.clearfix:before, .clearfix:after { display: table; content: ""; line-height: 0; }'
+      app_css.must_include '.clearfix:after { clear: both; }'
+    end
+
   end
 
   private
