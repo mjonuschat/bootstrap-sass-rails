@@ -53,19 +53,19 @@ a {
 @each $type in label, badge {
   // Important (red)
   .#{$type}-important        { background-color: $errorText; }
-  .#{$type}-important:hover  { background-color: darken($errorText, 10%); }
+  .#{$type}-important[href]  { background-color: darken($errorText, 10%); }
   // Warnings (orange)
   .#{$type}-warning          { background-color: $orange; }
-  .#{$type}-warning:hover    { background-color: darken($orange, 10%); }
+  .#{$type}-warning[href]    { background-color: darken($orange, 10%); }
   // Success (green)
   .#{$type}-success          { background-color: $successText; }
-  .#{$type}-success:hover    { background-color: darken($successText, 10%); }
+  .#{$type}-success[href]    { background-color: darken($successText, 10%); }
   // Info (turquoise)
   .#{$type}-info             { background-color: $infoText; }
-  .#{$type}-info:hover       { background-color: darken($infoText, 10%); }
+  .#{$type}-info[href]       { background-color: darken($infoText, 10%); }
   // Inverse (black)
   .#{$type}-inverse          { background-color: $grayDark; }
-  .#{$type}-inverse:hover    { background-color: darken($grayDark, 10%); }
+  .#{$type}-inverse[href]    { background-color: darken($grayDark, 10%); }
 }
 
 // Quick fix for labels/badges in buttons
