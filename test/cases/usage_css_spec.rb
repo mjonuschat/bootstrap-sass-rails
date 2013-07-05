@@ -4,7 +4,7 @@ class UsageCssSpec < Bootstrap::Sass::Rails::Spec
 
   describe 'application.css' do
 
-    let(:app_css) { dummy_asset('application.css') }
+    let(:app_css) { dummy_asset('application.css').gsub(/\n+\s+/, ' ') }
 
     it 'will render main bootstrap.less file and all included modules' do
       app_css.must_include 'Bootstrap v'
@@ -54,7 +54,7 @@ class UsageCssSpec < Bootstrap::Sass::Rails::Spec
 
   describe 'no-sprites.css' do
 
-    let(:app_css) { dummy_asset('no-sprites.css') }
+    let(:app_css) { dummy_asset('no-sprites.css').gsub(/\n+\s+/, ' ') }
 
     it 'will render main bootstrap-no-sprites.scss file and include alls modules except sprites' do
       app_css.must_include 'Bootstrap v'
@@ -103,7 +103,7 @@ class UsageCssSpec < Bootstrap::Sass::Rails::Spec
 
   describe 'individual.scss' do
 
-    let(:individual_css) { dummy_asset('individual.css') }
+    let(:individual_css) { dummy_asset('individual.css').gsub(/\n+\s+/, ' ') }
 
     it 'will render bootstrap variables and mixins' do
       my_button_line = line_for_individual_css('individual-my-button')
@@ -121,7 +121,7 @@ class UsageCssSpec < Bootstrap::Sass::Rails::Spec
 
   describe 'sprockets.css' do
 
-    let(:sprockets_css) { dummy_asset('sprockets.css') }
+    let(:sprockets_css) { dummy_asset('sprockets.css').gsub(/\n+\s+/, ' ') }
 
     it 'will render main bootstrap.css file and all included modules' do
       sprockets_css.must_include 'Bootstrap v'

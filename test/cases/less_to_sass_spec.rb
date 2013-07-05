@@ -4,7 +4,7 @@ class LessToSassSpec < Bootstrap::Sass::Rails::Spec
 
   describe 'application.css' do
 
-    let(:app_css) { dummy_asset('application.css') }
+    let(:app_css) { dummy_asset('application.css').gsub(/\n+\s+/, ' ') }
 
     it 'should include a class for block level inputs' do
       app_css.must_include '.input-block-level {'
