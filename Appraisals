@@ -7,6 +7,6 @@ appraise "3.2" do
 end
 
 appraise "4.0" do
-  gem "rails",      ">= 4.0.0.beta1"
-  gem "sass-rails", ">= 4.0.0.beta1"
+  gem "rails",      ">= 4.0.0"
+  gem "sass-rails", ">= 4.0.0"
 end
