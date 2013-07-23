@@ -1,4 +1,3 @@
-/* Partial: twitter/bootstrap/_component-animations.scss */
 //
 // Component animations
 // --------------------------------------------------
@@ -17,6 +16,7 @@
   height: 0;
   overflow: hidden;
   @include transition(height .35s ease);
+
   &.in {
     height: auto;
   }
