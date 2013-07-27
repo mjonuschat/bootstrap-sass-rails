@@ -1,6 +1,6 @@
 /* ========================================================================
  * Bootstrap: dropdown.js v3.0.0
- * http://twitter.github.com/bootstrap/javascript.html#dropdowns
+ * http://twbs.github.com/bootstrap/javascript.html#dropdowns
  * ========================================================================
  * Copyright 2012 Twitter, Inc.
  *
@@ -42,7 +42,7 @@
     if (!isActive) {
       if ('ontouchstart' in document.documentElement) {
         // if mobile we we use a backdrop because click events don't delegate
-        $('<div class="dropdown-backdrop"/>').insertBefore($(this)).on('click', clearMenus)
+        $('<div class="dropdown-backdrop"/>').insertAfter($(this)).on('click', clearMenus)
       }
 
       $parent.trigger(e = $.Event('show.bs.dropdown'))
@@ -144,7 +144,6 @@
 
   // APPLY TO STANDARD DROPDOWN ELEMENTS
   // ===================================
-
 
   $(document)
     .on('click.bs.dropdown.data-api', clearMenus)

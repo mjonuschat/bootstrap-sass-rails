@@ -1,6 +1,6 @@
 /* ========================================================================
  * Bootstrap: modal.js v3.0.0
- * http://twitter.github.com/bootstrap/javascript.html#modals
+ * http://twbs.github.com/bootstrap/javascript.html#modals
  * ========================================================================
  * Copyright 2012 Twitter, Inc.
  *
@@ -74,7 +74,11 @@
       that.enforceFocus()
 
       transition ?
-        that.$element.one($.support.transition.end, function () { that.$element.focus().trigger('shown.bs.modal') }) :
+        that.$element
+          .one($.support.transition.end, function () {
+            that.$element.focus().trigger('shown.bs.modal')
+          })
+          .emulateTransitionEnd(300) :
         that.$element.focus().trigger('shown.bs.modal')
     })
   }
@@ -99,7 +103,9 @@
       .attr('aria-hidden', true)
 
     $.support.transition && this.$element.hasClass('fade') ?
-      this.hideWithTransition() :
+      this.$element
+        .one($.support.transition.end, $.proxy(this.hideModal, this))
+        .emulateTransitionEnd(300) :
       this.hideModal()
   }
 
@@ -121,19 +127,6 @@
     } else if (!this.isShown) {
       this.$element.off('keyup.dismiss.bs.modal')
     }
-  }
-
-  Modal.prototype.hideWithTransition = function () {
-    var that    = this
-    var timeout = setTimeout(function () {
-      that.$element.off($.support.transition.end)
-      that.hideModal()
-    }, 500)
-
-    this.$element.one($.support.transition.end, function () {
-      clearTimeout(timeout)
-      that.hideModal()
-    })
   }
 
   Modal.prototype.hideModal = function () {
@@ -174,14 +167,18 @@
       if (!callback) return
 
       doAnimate ?
-        this.$backdrop.one($.support.transition.end, callback) :
+        this.$backdrop
+          .one($.support.transition.end, callback)
+          .emulateTransitionEnd(150) :
         callback()
 
     } else if (!this.isShown && this.$backdrop) {
       this.$backdrop.removeClass('in')
 
       $.support.transition && this.$element.hasClass('fade')?
-        this.$backdrop.one($.support.transition.end, callback) :
+        this.$backdrop
+          .one($.support.transition.end, callback)
+          .emulateTransitionEnd(150) :
         callback()
 
     } else if (callback) {
@@ -235,10 +232,10 @@
       .one('hide', function () {
         $this.is(':visible') && $this.focus()
       })
-    })
+  })
 
-    var $body = $(document.body)
-      .on('bs.modal.shown',  '.modal', function () { $body.addClass('modal-open') })
-      .on('bs.modal.hidden', '.modal', function () { $body.removeClass('modal-open') })
+  var $body = $(document.body)
+    .on('shown.bs.modal',  '.modal', function () { $body.addClass('modal-open') })
+    .on('hidden.bs.modal', '.modal', function () { $body.removeClass('modal-open') })
 
 }(window.jQuery);
