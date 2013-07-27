@@ -14,9 +14,7 @@ Twitter Bootstrap has been converted to Sass which makes it possible to use the 
 
 Add these lines to your application's Gemfile:
 
-    group :assets do
-      gem 'bootstrap-sass-rails'
-    end
+    gem 'bootstrap-sass-rails'
 
 And then execute:
 
@@ -68,54 +66,26 @@ within `.css.scss` files.
   @include myButton(10px);
 }
 ```
-### Responsive styles
-
-Adding the responsive styles included with Twitter Bootstrap to your project is just as easy.
-Depending on the way you chose to include the base bootstrap styles you need to do one of the following:
-
-Importing the responsive partial using the Sass `@import` directive in a `.scss` file:
-
-```scss
-@import 'twitter/bootstrap';
-@import 'twitter/bootstrap/responsive';
-```
-
-Using `=require` to include the responsive partial in a `.css` file (watch the underscore in the partial name!):
-```css
-/*
- *= require twitter/bootstrap
- *= require twitter/bootstrap/_responsive
- */
-```
-
-Using `=require` to include the responsive partial in a `.scss` file (watch the underscore in the partial name!):
-```scss
-#= require twitter/bootstrap
-#= require twitter/bootstrap/_responsive
-```
 
 ### Icon Fonts
 
 To ease the common use case of extending Twitter Bootstrap with a icon
-font like [Font Awesome](http://fortawesome.github.com/Font-Awesome/) a
-css file is included which leaves out the original sprites.
+font the official [Glyphicons for Bootstrap]() icon font has been
+included in this gem.
 
 You can use it like this
 
 ```css
 /*
- *= require twitter/bootstrap-no-sprites
+ *= require twitter/bootstrap/_glyphicons.scss
  */
 ```
 
 or
 
 ```css
-@import "twitter/bootstrap-no-sprites";
+@import "twitter/bootstrap/glyphicons";
 ```
-
-Please note that Font Awesome is not included in this gem - you will
-need to vendorize the font assets by yourself!
 
 ### Javascripts
 
