@@ -14,7 +14,12 @@ Gem::Specification.new do |s|
   s.description = "Bootstrap is Twitter's toolkit for kickstarting CSS for websites, apps, and more. It includes base CSS styles for typography, forms, buttons, tables, grids, navigation, alerts, and more."
 
   s.files = Dir["{app,config,db,lib,vendor}/**/*"] + ["LICENSE", "Rakefile", "README.md"]
+  s.files.reject! { |fn| fn.include? ".sass-cache" }
+
   s.test_files = Dir["test/**/*"]
+  s.test_files.reject! { |fn| fn.include? "dummy/tmp/cache/" }
+  s.test_files.reject! { |fn| fn.include? "dummy/log/" }
+  s.test_files.reject! { |fn| fn.include? ".sass-cache" }
 
   s.add_dependency "railties", ">= 3.1.0"
   s.add_dependency "sass-rails", ">= 3.1.0"
