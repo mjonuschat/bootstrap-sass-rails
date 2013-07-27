@@ -120,7 +120,6 @@ $btn-info-border:                $btn-info-bg !default;
 $btn-hover-color:                $btn-default-color !default;
 
 
-
 // Forms
 // -------------------------
 
@@ -157,6 +156,7 @@ $dropdown-link-hover-color:      #fff !default;
 $dropdown-link-hover-bg:         $dropdown-link-active-bg !default;
 
 $dropdown-caret-color:           #000 !default;
+
 
 // COMPONENT VARIABLES
 // --------------------------------------------------
@@ -360,12 +360,13 @@ $state-info-border:              darken(adjust-hue($state-info-bg, -10), 7%) !de
 
 // Tooltips
 // -------------------------
-$tooltip-max-width:           200px;
+$tooltip-max-width:           200px !default;
 $tooltip-color:               #fff !default;
 $tooltip-bg:                  rgba(0,0,0,.9) !default;
 
 $tooltip-arrow-width:         5px !default;
 $tooltip-arrow-color:         $tooltip-bg !default;
+
 
 // Popovers
 // -------------------------
@@ -556,7 +557,6 @@ $headings-small-color:        $gray-light !default;
 $blockquote-small-color:      $gray-light !default;
 $blockquote-border-color:     $gray-lighter !default;
 $page-header-border-color:    $gray-lighter !default;
-
 
 // Miscellaneous
 // -------------------------

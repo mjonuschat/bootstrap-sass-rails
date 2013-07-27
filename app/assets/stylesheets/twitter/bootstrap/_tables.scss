@@ -82,7 +82,6 @@ th {
 
 .table-bordered {
   border: 1px solid $table-border-color;
-
   > thead,
   > tbody,
   > tfoot {
@@ -154,7 +153,7 @@ table {
 // Table backgrounds
 // -----------------
 // Exact selectors below required to override `.table-striped` and prevent
-// inheritance to nested tables
+// inheritance to nested tables.
 
 .table > thead > tr,
 .table > tbody > tr,
