@@ -158,9 +158,9 @@
 // Default value is `visible`, but can be changed to `hidden`
 // See git pull https://github.com/dannykeane/bootstrap.git backface-visibility for examples
 @mixin backface-visibility($visibility){
-	-webkit-backface-visibility: $visibility;
-	   -moz-backface-visibility: $visibility;
-	        backface-visibility: $visibility;
+  -webkit-backface-visibility: $visibility;
+     -moz-backface-visibility: $visibility;
+          backface-visibility: $visibility;
 }
 
 // Background clipping
@@ -403,7 +403,7 @@
 // Navbar vertical align
 // -------------------------
 // Vertically center elements in the navbar.
-// Example: an element has a height of 30px, so write out `.navbarVerticalAlign(30px);` to calculate the appropriate top margin.
+// Example: an element has a height of 30px, so write out `.navbar-vertical-align(30px);` to calculate the appropriate top margin.
 @mixin navbar-vertical-align($element-height) {
   margin-top: (($navbar-height - $element-height) / 2);
   margin-bottom: (($navbar-height - $element-height) / 2);
