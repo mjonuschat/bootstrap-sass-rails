@@ -40,7 +40,7 @@ module Dummy
     config.assets.enabled = true
 
     # Enable asset compression
-    config.assets.compress = true
+    config.assets.compress = false
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = SecureRandom.hex(32)
