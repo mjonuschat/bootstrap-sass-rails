@@ -209,6 +209,7 @@ $screen-large:               1200px !default;
 $screen-large-desktop:       $screen-large !default;
 
 // So media queries don't overlap when required, provide a maximum
+$screen-phone-max:           ($screen-small - 1) !default;
 $screen-small-max:           ($screen-medium - 1) !default;
 $screen-tablet-max:          ($screen-desktop - 1) !default;
 $screen-desktop-max:         ($screen-large-desktop - 1) !default;
@@ -595,10 +596,10 @@ $component-offset-horizontal: 180px !default;
 // --------------------------------------------------
 
 // Small screen / tablet
-$container-tablet:          728px !default;
+$container-tablet:          720px !default;
 
 // Medium screen / desktop
 $container-desktop:         940px !default;
 
 // Large screen / wide desktop
-$container-large-desktop:   1170px !default;
+$container-large-desktop:   1140px !default;
