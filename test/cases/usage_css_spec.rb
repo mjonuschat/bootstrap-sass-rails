@@ -9,7 +9,6 @@ class UsageCssSpec < Bootstrap::Sass::Rails::Spec
     it 'will render main bootstrap.less file and all included modules' do
       app_css.must_include 'Bootstrap v'
 
-      app_css.must_include '.accordion {'
       app_css.must_include '.alert {'
       app_css.must_include '.badge {'
       app_css.must_include '.breadcrumb {'
@@ -19,6 +18,7 @@ class UsageCssSpec < Bootstrap::Sass::Rails::Spec
       app_css.must_include '.close {'
       app_css.must_include 'pre {'
       app_css.must_include '.fade {'
+      app_css.must_include '.input-group {'
       app_css.must_include '.dropdown-menu {'
       app_css.must_include '.form-control {'
       app_css.must_include '.container {'
@@ -75,7 +75,6 @@ class UsageCssSpec < Bootstrap::Sass::Rails::Spec
 
     it 'will render main bootstrap.css file and all included modules' do
       sprockets_css.must_include 'Bootstrap v'
-      sprockets_css.must_include '.accordion {'
       sprockets_css.must_include '.alert {'
       sprockets_css.must_include '.badge {'
       sprockets_css.must_include '.breadcrumb {'
@@ -85,6 +84,7 @@ class UsageCssSpec < Bootstrap::Sass::Rails::Spec
       sprockets_css.must_include '.close {'
       sprockets_css.must_include 'pre {'
       sprockets_css.must_include '.fade {'
+      sprockets_css.must_include '.input-group {'
       sprockets_css.must_include '.dropdown-menu {'
       sprockets_css.must_include '.form-control {'
       sprockets_css.must_include '.container {'
