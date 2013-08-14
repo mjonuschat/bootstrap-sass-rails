@@ -55,6 +55,11 @@
     .list-group-item-heading {
       color: inherit;
     }
+    .list-group-item-text {
+      color: lighten($list-group-active-bg, 40%);
+    }
+  }
+}
 // Linked list items
 a.list-group-item {
   color: $list-group-link-color;
@@ -68,11 +73,6 @@ a.list-group-item {
   &:focus {
     text-decoration: none;
     background-color: $list-group-hover-bg;
-  }
-}
-    .list-group-item-text {
-      color: lighten($list-group-active-bg, 40%);
-    }
   }
 }
 

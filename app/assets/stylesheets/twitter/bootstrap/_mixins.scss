@@ -459,18 +459,14 @@
 // -------------------------
 // More easily include all the states for responsive-utilities.less.
 @mixin responsive-visibility($parent) {
-  #{$parent} { 
-    display: block !important;
-  }
+  #{$parent} { display: block !important; }
   tr#{$parent} { display: table-row !important; }
   th#{$parent},
   td#{$parent} { display: table-cell !important; }
 }
 
 @mixin responsive-invisibility($parent) {
-  #{$parent} { 
-    display: none !important;
-  }
+  #{$parent} { display: none !important; }
   tr#{$parent} { display: none !important; }
   th#{$parent},
   td#{$parent} { display: none !important; }
