@@ -259,7 +259,12 @@
 
 @media (min-width: $grid-float-breakpoint) {
   .navbar-left  { @extend .pull-left; }
-  .navbar-right { @extend .pull-right; }
+  .navbar-right {
+    @extend .pull-right;
+    .dropdown-menu {
+      @extend .pull-right-dropdown-menu;
+    }
+  }
 }
 
 
