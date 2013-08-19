@@ -19,6 +19,7 @@ class UsageCssSpec < Bootstrap::Sass::Rails::Spec
       app_css.must_include 'pre {'
       app_css.must_include '.fade {'
       app_css.must_include '.input-group {'
+      app_css.must_include '.glyphicon {'
       app_css.must_include '.dropdown-menu {'
       app_css.must_include '.form-control {'
       app_css.must_include '.container {'
@@ -61,10 +62,10 @@ class UsageCssSpec < Bootstrap::Sass::Rails::Spec
       my_button_line.must_include '-webkit-transform: rotate(180);'
       my_button_line.must_include '-ms-transform: rotate(180);'
       my_button_line.must_include 'transform: rotate(180);'
-      individual_css.must_include 'glyphiconshalflings-regular.eot'
-      individual_css.must_include 'glyphiconshalflings-regular.ttf'
-      individual_css.must_include 'glyphiconshalflings-regular.svg'
-      individual_css.must_include 'glyphiconshalflings-regular.woff'
+      individual_css.must_include 'glyphicons-halflings-regular.eot'
+      individual_css.must_include 'glyphicons-halflings-regular.ttf'
+      individual_css.must_include 'glyphicons-halflings-regular.svg'
+      individual_css.must_include 'glyphicons-halflings-regular.woff'
     end
 
   end
@@ -85,6 +86,7 @@ class UsageCssSpec < Bootstrap::Sass::Rails::Spec
       sprockets_css.must_include 'pre {'
       sprockets_css.must_include '.fade {'
       sprockets_css.must_include '.input-group {'
+      sprockets_css.must_include '.glyphicon {'
       sprockets_css.must_include '.dropdown-menu {'
       sprockets_css.must_include '.form-control {'
       sprockets_css.must_include '.container {'
