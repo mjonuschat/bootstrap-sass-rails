@@ -10,6 +10,7 @@
 
 .navbar {
   position: relative;
+  z-index: $zindex-navbar;
   min-height: $navbar-height; // Ensure a navbar always shows (e.g., without a .navbar-brand in collapsed mode)
   margin-bottom: $navbar-margin-bottom;
   border: 1px solid transparent;
@@ -84,6 +85,9 @@
     .navbar-nav.navbar-right:last-child {
       margin-right: -$navbar-padding-horizontal;
     }
+    .navbar-text:last-child {
+      margin-right: 0;
+    }
   }
 }
 
@@ -124,7 +128,6 @@
   position: fixed;
   right: 0;
   left: 0;
-  z-index: $zindex-navbar-fixed;
   border-width: 0 0 1px;
 
   // Undo the rounded corners
@@ -133,6 +136,7 @@
   }
 }
 .navbar-fixed-top {
+  z-index: $zindex-navbar-fixed;
   top: 0;
 }
 .navbar-fixed-bottom {
@@ -199,7 +203,7 @@
 // the nav the full height of the horizontal nav (above 768px).
 
 .navbar-nav {
-  margin: ($navbar-padding-vertical / 2) -$navbar-padding-horizontal;
+  margin: ($navbar-padding-vertical / 2) (-$navbar-padding-horizontal);
 
   > li > a {
     padding-top:    10px;
@@ -255,14 +259,8 @@
 // though so that navbar contents properly stack and align in mobile.
 
 @media (min-width: $grid-float-breakpoint) {
-  .navbar-left  { @extend .pull-left; }
-  .navbar-right {
-    @extend .pull-right;
-    .dropdown-menu {
-      right: 0;
-      left: auto;
-    }
-  }
+  .navbar-left  { float: left !important; }
+  .navbar-right { float: right !important; }
 }
 
 

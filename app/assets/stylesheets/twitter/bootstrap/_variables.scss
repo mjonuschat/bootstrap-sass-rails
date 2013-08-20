@@ -188,6 +188,7 @@ $dropdown-caret-color:           #000 !default;
 // Used for a bird's eye view of components dependent on the z-axis
 // Try to avoid customizing these :)
 
+$zindex-navbar:            1000 !default;
 $zindex-dropdown:          1000 !default;
 $zindex-popover:           1010 !default;
 $zindex-tooltip:           1030 !default;
@@ -351,9 +352,11 @@ $pager-disabled-color:                 $gray-light !default;
 // Jumbotron
 // -------------------------
 
+$jumbotron-padding:              30px !default;
+$jumbotron-color:                inherit !default;
 $jumbotron-bg:                   $gray-lighter !default;
+
 $jumbotron-heading-color:        inherit !default;
-$jumbotron-lead-color:           inherit !default;
 
 
 // Form states and alerts
