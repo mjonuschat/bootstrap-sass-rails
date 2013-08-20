@@ -67,26 +67,6 @@ within `.css.scss` files.
 }
 ```
 
-### Icon Fonts
-
-To ease the common use case of extending Twitter Bootstrap with a icon
-font the official [Glyphicons for Bootstrap]() icon font has been
-included in this gem.
-
-You can use it like this
-
-```css
-/*
- *= require twitter/bootstrap/_glyphicons.scss
- */
-```
-
-or
-
-```css
-@import "twitter/bootstrap/glyphicons";
-```
-
 ### Javascripts
 
 Using the JavaScript works the same way. You can include them all with a

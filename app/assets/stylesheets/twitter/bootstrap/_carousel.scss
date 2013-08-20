@@ -21,7 +21,7 @@
     // Account for jankitude on images
     > img,
     > a > img {
-      @extend .img-responsive;
+      @include img-responsive();
       line-height: 1;
     }
   }
@@ -98,12 +98,17 @@
 
   // Toggles
   .icon-prev,
-  .icon-next {
+  .icon-next,
+  .glyphicon-chevron-left,
+  .glyphicon-chevron-right {
     position: absolute;
     top: 50%;
     left: 50%;
     z-index: 5;
     display: inline-block;
+  }
+  .icon-prev,
+  .icon-next {
     width:  20px;
     height: 20px;
     margin-top: -10px;
