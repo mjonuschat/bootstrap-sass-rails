@@ -120,7 +120,7 @@
   -webkit-transition-duration: $transition-duration;
           transition-duration: $transition-duration;
 }
-@mixin transition-transform($transition) {
+@mixin transition-transform($transition...) {
   -webkit-transition: -webkit-transform $transition;
      -moz-transition: -moz-transform $transition;
        -o-transition: -o-transform $transition;
