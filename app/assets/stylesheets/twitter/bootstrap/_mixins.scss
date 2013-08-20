@@ -120,7 +120,7 @@
   -webkit-transition-duration: $transition-duration;
           transition-duration: $transition-duration;
 }
-@mixin transition-transform($transition) {
+@mixin transition-transform($transition...) {
   -webkit-transition: -webkit-transform $transition;
      -moz-transition: -moz-transform $transition;
        -o-transition: -o-transform $transition;
@@ -283,7 +283,6 @@
   background-image: linear-gradient($angle, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
 }
 
-
 // Reset filters for IE
 //
 // When you need to remove a gradient background, do not forget to use this to reset
@@ -299,7 +298,7 @@
 // Short retina mixin for setting background-image and -size
 
 @mixin img-retina($file-1x, $file-2x, $width-1x, $height-1x) {
-  background-image: url("$file-1x");
+  background-image: image-url("$file-1x");
 
   @media
   only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -308,7 +307,7 @@
   only screen and (        min-device-pixel-ratio: 2),
   only screen and (                min-resolution: 192dpi),
   only screen and (                min-resolution: 2dppx) {
-    background-image: url("$file-2x");
+    background-image: image-url("$file-2x");
     background-size: $width-1x $height-1x;
   }
 }
@@ -404,29 +403,40 @@
 // -------------------------
 // Easily pump out default styles, as well as :hover, :focus, :active,
 // and disabled options for all buttons
-@mixin button-variant($parent, $color, $background, $border) {
-  #{$parent} {
-    color: $color;
-    background-color: $background;
-    border-color: $border;
-  }
-  #{$parent}:hover,
-  #{$parent}:focus,
-  #{$parent}:active,
-  #{$parent}.active,
-  .open .dropdown-toggle#{$parent} {
+@mixin button-variant($color, $background, $border) {
+  color: $color;
+  background-color: $background;
+  border-color: $border;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
     color: $color;
     background-color: darken($background, 8%);
         border-color: darken($border, 12%);
   }
-  #{$parent}:active,
-  #{$parent}.active,
-  .open .dropdown-toggle#{$parent} {
+  .open & {
+    &.dropdown-toggle {
+    color: $color;
+    background-color: darken($background, 8%);
+        border-color: darken($border, 12%);
+    }
+
+  }
+  &:active,
+  &.active {
     background-image: none;
   }
-  #{$parent}.disabled,
-  #{$parent}[disabled],
-  fieldset[disabled] #{$parent} {
+  .open & {
+    &.dropdown-toggle {
+    background-image: none;
+    }
+
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
     &,
     &:hover,
     &:focus,
@@ -708,6 +718,7 @@
 
 @mixin input-size($parent, $input-height, $padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
   #{$parent} {
+
     height: $input-height;
     padding: $padding-vertical $padding-horizontal;
     font-size: $font-size;
