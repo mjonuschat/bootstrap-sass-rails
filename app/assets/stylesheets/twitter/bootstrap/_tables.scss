@@ -169,9 +169,9 @@ table {
 }
 
 // Generate the contextual variants
-@include table-row-variant(success, $state-success-bg, $state-success-border);
-@include table-row-variant(danger, $state-danger-bg, $state-danger-border);
-@include table-row-variant(warning, $state-warning-bg, $state-warning-border);
+@include table-row-variant('success', $state-success-bg, $state-success-border);
+@include table-row-variant('danger', $state-danger-bg, $state-danger-border);
+@include table-row-variant('warning', $state-warning-bg, $state-warning-border);
 
 
 // Responsive tables
