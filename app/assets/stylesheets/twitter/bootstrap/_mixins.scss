@@ -736,6 +736,7 @@
   }
 }
 
+
 @mixin make-grid-columns-float($class) {
   $list: ();
   @for $index from 1 to $grid-columns {
@@ -746,32 +747,36 @@
   }
 }
 
+
 @mixin calc-grid($index, $class, $type) {
   @if $type == width {
     .col-#{$class}-#{$index} {
       width: percentage(($index / $grid-columns));
     }
-  } @else if $type == push {
+  }
+  @if $type == push {
     .col-#{$class}-push-#{$index} {
       left: percentage(($index / $grid-columns));
     }
-  } @else if $type == pull {
+  }
+  @if $type == pull {
     .col-#{$class}-pull-#{$index} {
       right: percentage(($index / $grid-columns));
     }
-  } @else if $type == offset {
+  }
+  @if $type == offset {
     .col-#{$class}-offset-#{$index} {
       margin-left: percentage(($index / $grid-columns));
     }
   }
 }
 
-// Basic looping in LESS
 @mixin make-grid($index, $class, $type) {
   @for $i from 1 through $index {
     @include calc-grid($i, $class, $type);
   }
 }
+
 
 
 // Form validation states
