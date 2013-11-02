@@ -7,8 +7,6 @@ class UsageCssSpec < Bootstrap::Sass::Rails::Spec
     let(:app_css) { dummy_asset('application.css').gsub(/\n+\s+/, ' ') }
 
     it 'will render main bootstrap.less file and all included modules' do
-      app_css.must_include 'Bootstrap v'
-
       app_css.must_include '.alert {'
       app_css.must_include '.badge {'
       app_css.must_include '.breadcrumb {'
@@ -75,7 +73,6 @@ class UsageCssSpec < Bootstrap::Sass::Rails::Spec
     let(:sprockets_css) { dummy_asset('sprockets.css').gsub(/\n+\s+/, ' ') }
 
     it 'will render main bootstrap.css file and all included modules' do
-      sprockets_css.must_include 'Bootstrap v'
       sprockets_css.must_include '.alert {'
       sprockets_css.must_include '.badge {'
       sprockets_css.must_include '.breadcrumb {'
