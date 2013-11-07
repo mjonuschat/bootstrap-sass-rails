@@ -772,7 +772,7 @@
 }
 
 @mixin make-grid($index, $class, $type) {
-  @for $i from 1 through $index {
+  @for $i from 0 through $index {
     @include calc-grid($i, $class, $type);
   }
 }
