@@ -67,6 +67,15 @@ within `.css.scss` files.
 }
 ```
 
+You can also use the generator to generate files needed to override your variables and load only the parts you want
+```
+rails generate bootstrap:advanced
+```
+Then you just need to include the bootstrap_override file in your application.css
+```css
+@import "bootstrap_overrides/bootstrap_overrides";
+```
+
 ### Javascripts
 
 Using the JavaScript works the same way. You can include them all with a
