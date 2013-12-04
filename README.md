@@ -67,14 +67,25 @@ within `.css.scss` files.
 }
 ```
 
-You can also use the generator to generate files needed to override your variables and load only the parts you want
+You can also use the generator to generate custom bootstrap includes to override your variables and load only
+the components you need.
+
 ```
-rails generate bootstrap:advanced
+rails generate bootstrap:customize
 ```
-Then you just need to include the bootstrap_override file in your application.css
+
+Then you just need to include the bootstrap-custom file in your application.css
+
 ```css
-@import "bootstrap_overrides/bootstrap_overrides";
+@import "bootstrap-custom";
 ```
+
+The generator has a `--css-components` option that includes all available bootstrap components in the
+custom include file. You can pick and choose what you need from there. There can be dependencies between
+the different components, please check the Bootstrap homepage for details.
+
+For the Javascript components there is a `--js-components` option. The same rules as for the CSS components
+apply, if you are unsure about the order and dependencies please check the upstream homepage.
 
 ### Javascripts
 
