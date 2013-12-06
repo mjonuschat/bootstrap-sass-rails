@@ -7,7 +7,7 @@ class LessToSassSpec < Bootstrap::Sass::Rails::Spec
     let(:app_css) { dummy_asset('application.css').gsub(/\n+\s+/, ' ') }
 
     it 'should include the clearfix helper classes' do
-      app_css.must_include '.clearfix:before, .clearfix:after { content: " "; /* 1 */ display: table; /* 2 */ }'
+      app_css.must_include '.clearfix:before, .clearfix:after { content: " "; display: table; }'
       app_css.must_include '.clearfix:after { clear: both; }'
     end
 
