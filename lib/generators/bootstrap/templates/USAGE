@@ -1,0 +1,23 @@
+===============================================================================
+
+Some setup you must do manually:
+
+  1. Include the bootstrap-custom stylesheet in your application.css.scss before
+     you import the twitter/bootstrap file:
+
+     @import "bootstrap-custom";
+
+  2. If you chose to customize the CSS components remove the following line
+     from your application.css.scss, the bootstrap components will be imported
+     from the bootstrap-custom.css.scss file:
+
+     @import "twitter/bootstrap";
+
+  3. If you chose to customize the JS components add the necessary require
+     directive to your application.js file:
+
+     //= require bootstrap-custom
+
+  Thank you for using bootstrap-sass-rails!
+
+===============================================================================
