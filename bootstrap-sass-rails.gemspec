@@ -6,7 +6,7 @@ require "bootstrap/sass/rails/version"
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
   s.name        = "bootstrap-sass-rails"
-  s.version     = Bootstrap::Sass::Rails::VERSION
+  s.version     = "#{Bootstrap::Sass::Rails::VERSION}.#{Bootstrap::Sass::Rails::PATCHLEVEL}"
   s.authors     = ["Morton Jonuschat"]
   s.email       = ["yabawock@gmail.com"]
   s.homepage    = "https://github.com/yabawock/bootstrap-sass-rails"
@@ -21,10 +21,11 @@ Gem::Specification.new do |s|
   s.test_files.reject! { |fn| fn.include? "dummy/log/" }
   s.test_files.reject! { |fn| fn.include? ".sass-cache" }
 
-  s.add_dependency "railties", ">= 3.1.0"
-  s.add_dependency "sass-rails", ">= 3.1.0"
+  s.add_dependency "railties", ">= 3.2.0"
+  s.add_dependency "sass-rails", ">= 3.2.0"
+  s.add_dependency "bootstrap-sass", "~> #{Bootstrap::Sass::Rails::VERSION}.0"
 
   s.add_development_dependency "rake"
-  s.add_development_dependency "rails",         ">= 3.1.0"
+  s.add_development_dependency "rails",         ">= 3.2.0"
   s.add_development_dependency "appraisal",     "~> 0.5.1"
 end
