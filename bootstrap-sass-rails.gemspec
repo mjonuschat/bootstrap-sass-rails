@@ -13,6 +13,8 @@ Gem::Specification.new do |s|
   s.summary     = "HTML, CSS, and JS toolkit from Twitter converted to Sasss and the Rails asset pipeline"
   s.description = "Bootstrap is Twitter's toolkit for kickstarting CSS for websites, apps, and more. It includes base CSS styles for typography, forms, buttons, tables, grids, navigation, alerts, and more."
 
+  s.post_install_message = File.read(File.join(File.dirname(__FILE__), 'README.md'))
+
   s.files = Dir["{app,config,db,lib,vendor}/**/*"] + ["LICENSE", "Rakefile", "README.md"]
   s.files.reject! { |fn| fn.include? ".sass-cache" }
 
