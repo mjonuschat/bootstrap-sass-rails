@@ -11,7 +11,7 @@ Some setup you must do manually:
      from your application.css.scss, the bootstrap components will be imported
      from the bootstrap-custom.css.scss file:
 
-     @import "twitter/bootstrap";
+     @import "bootstrap";
 
   3. If you chose to customize the JS components add the necessary require
      directive to your application.js file:
