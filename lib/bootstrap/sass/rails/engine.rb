@@ -2,14 +2,9 @@ module Bootstrap
   module Sass
     module Rails
       class Engine < ::Rails::Engine
-        initializer :setup_bootstrap_sass_rails, group: :all do |app|
-          # Ten significant digits precision is required for calculations
-          # to work out in Bootstrap 3.0 - to match LESS/JS calculations
-          # bump the default precision to match IEEE-754 double precision
-          # floating point requirements
-          if ::Sass::Script::Number.precision < 10
-            ::Sass::Script::Number.precision = 15
-          end
+        initializer :after_append_asset_paths, :group => :all, :after => :append_assets_path do |app|
+          ::Bootstrap.load!
+          app.config.assets.paths.unshift File.join(::Bootstrap.stylesheets_path, 'bootstrap')
         end
       end
     end
