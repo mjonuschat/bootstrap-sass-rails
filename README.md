@@ -1,6 +1,6 @@
 # DEPRECATION NOTICE
 
-The bootstrap-sass-rails is deprecated starting with version 3.1.0.0.
+The bootstrap-sass-rails gem is deprecated starting with version 3.1.0.0.
 There is an official Sass port of Bootstrap now which can be found
 within the twbs organization on GitHub:
 
