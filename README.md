@@ -10,25 +10,32 @@ You are recommended to upgrade your Gemfile to directly use bootstrap-sass
 from now on. Upgrading should be really simple, the differences between the
 gems are mostly in the namespacing.
 
-UPGRADING
+# UPGRADING
 
-  Remove the twitter/ prefix from all your `@import` and `= require`
-  statements:
+Remove the twitter/ prefix from all your `@import` and `= require` statements:
 
-  Before:
-    @import "twitter/bootstrap";
-    @import "twitter/bootstrap/modal";
+**Before:**
+```css
+  @import "twitter/bootstrap";  
+  @import "twitter/bootstrap/modal";  
+```
 
-  After:
-    @import "bootstrap";
-    @import "bootstrap/modal";
+**After:**
+```css
+  @import "bootstrap";  
+  @import "bootstrap/modal";  
+```
 
-  Before:
-    //= require "twitter/bootstrap";
-    //= require "twitter/bootstrap/modal";
+**Before:**
+```css
+  //= require "twitter/bootstrap";
+  //= require "twitter/bootstrap/modal";  
+```
 
-  After:
-    //= require "bootstrap";
-    //= require "bootstrap/modal";
+**After:**
+```css
+  //= require "bootstrap";  
+  //= require "bootstrap/modal";  
+```
 
-  Thank you for using bootstrap-sass-rails!
+Thank you for using bootstrap-sass-rails!
